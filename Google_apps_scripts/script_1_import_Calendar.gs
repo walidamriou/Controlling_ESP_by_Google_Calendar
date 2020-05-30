@@ -1,13 +1,17 @@
 function getEvents() {
-  var name = "Controlling_ESP_by_Google_Calendar"; 
-  var TheCalendar = CalendarApp.getCalendarsByName(name);
+  //var name = "Controlling_ESP_by_Google_Calendar"; 
+  let id_of_calendar = "id_here"
+  //var TheCalendar = CalendarApp.getCalendarsByName(name);
+  let TheCalendar = CalendarApp.getCalendarById(id_of_calendar);	 
   
   var now = new Date();
+  Logger.log(now);
   var MonthFromNow = new Date(now.getTime() + (30 * 24 * 60 * 60 * 1000));
-  var events = CalendarApp.getDefaultCalendar().getEvents(now, MonthFromNow);
+  Logger.log(MonthFromNow);
+  let events = TheCalendar.getEvents(now, MonthFromNow);
   let Length_events = events.length;
   //let title = events[1].getTitle();
-  Logger.log(Length_events);
+  Logger.log(events[0].getTitle());
   //return events[0].getTitle();
 }
 
