@@ -5,7 +5,7 @@ function getEvents() {
   var now = new Date();
   var MonthFromNow = new Date(now.getTime() + (30 * 24 * 60 * 60 * 1000));
   var events = CalendarApp.getDefaultCalendar().getEvents(now, MonthFromNow);
-  return events;
+  return events[0];
 }
 
 function doPost(request_data) {
