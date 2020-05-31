@@ -20,29 +20,37 @@ function doPost(post_request_data) {
   let request_data = post_request_data.parameter.name;
 
   let TheCalendar = getEvents();
+  let TheCalendar_length=TheCalendar.length;
   let now = new Date();
   let MonthFromNow = new Date(now.getTime() + (30 * 24 * 60 * 60 * 1000));
 
-  let Json_respond = '{ Reponse_date: ' +
-                     now +
+  let Json_respond = '{ Reponse_date:' +
+                     now +'\n'+
                      ',Events_array_start_date:' +
-                     now +
+                     now +'\n'+
                      ',Events_array_end_date:'+
-                     MonthFromNow +
+                     MonthFromNow +'\n'+
                      ',Number_Events :'+
-                     TheCalendar.length+
-                     ',events:[' ;
+                     TheCalendar_length+'\n'+
+                     ',events:[' +  
+                     '\n' ;
   
-  for(let i=0;i<TheCalendar.length;i++){
-    Json_respond = Json_respond+'{';
-    Json_respond = Json_respond+'name:'+TheCalendar[i].getTitle()+',';
-    Json_respond = Json_respond+'Category:'+TheCalendar[i].getColor()+',';
-    Json_respond = Json_respond+'Event_start_date_time:'+TheCalendar[i].getStartTime()+',';
-    Json_respond = Json_respond+'Event_end_date_time:'+TheCalendar[i].getEndTime()+',';
-    Json_respond = Json_respond+'},';
-      }
+  for(let i=0;i<TheCalendar_length;i++){
+    Json_respond = Json_respond+'{'+'\n';
+    Json_respond = Json_respond+'event'+(i+1)+', '+'\n';
+    Json_respond = Json_respond+'name:'+TheCalendar[i].getTitle()+', '+'\n';
+    Json_respond = Json_respond+'Category:'+TheCalendar[i].getColor()+', '+'\n';
+    Json_respond = Json_respond+'Event_start_date_time:'+TheCalendar[i].getStartTime()+', '+'\n';
+    Json_respond = Json_respond+'Event_end_date_time:'+TheCalendar[i].getEndTime()+', '+'\n';
+   
+    if(i==(TheCalendar_length-1)){
+       Json_respond = Json_respond+'}'+'\n';
+    }
+    else{
+    Json_respond = Json_respond+'},'+'\n';    
+    }
+  }
       
-  //return respond(JSON.stringify({result: request_data.parameter.name}));
   //return respond(JSON.stringify(Json_respond));
   return respond(Json_respond);
 
