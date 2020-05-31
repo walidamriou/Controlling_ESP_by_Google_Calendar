@@ -1,6 +1,6 @@
 function getEvents() {
   //var name = "Controlling_ESP_by_Google_Calendar"; 
-  let id_of_calendar = "your_id"
+  let id_of_calendar = "your_id";
   //var TheCalendar = CalendarApp.getCalendarsByName(name);
   let TheCalendar = CalendarApp.getCalendarById(id_of_calendar);	 
   
@@ -36,20 +36,21 @@ function doPost(post_request_data) {
                      '\n' ;
   
   for(let i=0;i<TheCalendar_length;i++){
-    Json_respond = Json_respond+'{'+'\n';
-    Json_respond = Json_respond+'event'+(i+1)+', '+'\n';
-    Json_respond = Json_respond+'name:'+TheCalendar[i].getTitle()+', '+'\n';
-    Json_respond = Json_respond+'Category:'+TheCalendar[i].getColor()+', '+'\n';
-    Json_respond = Json_respond+'Event_start_date_time:'+TheCalendar[i].getStartTime()+', '+'\n';
-    Json_respond = Json_respond+'Event_end_date_time:'+TheCalendar[i].getEndTime()+', '+'\n';
+    Json_respond +='{'+'\n';
+    Json_respond += 'event'+(i+1)+', '+'\n';
+    Json_respond += 'name:'+TheCalendar[i].getTitle()+', '+'\n';
+    Json_respond += 'Category:'+TheCalendar[i].getColor()+', '+'\n';
+    Json_respond += 'Event_start_date_time:'+TheCalendar[i].getStartTime()+', '+'\n';
+    Json_respond += 'Event_end_date_time:'+TheCalendar[i].getEndTime()+', '+'\n';
    
     if(i==(TheCalendar_length-1)){
-       Json_respond = Json_respond+'}'+'\n';
+       Json_respond += '}'+'\n';
     }
     else{
-    Json_respond = Json_respond+'},'+'\n';    
+    Json_respond += '},'+'\n';    
     }
   }
+  Json_respond += '] \n }';
       
   //return respond(JSON.stringify(Json_respond));
   return respond(Json_respond);
