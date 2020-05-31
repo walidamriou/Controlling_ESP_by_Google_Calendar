@@ -1,6 +1,6 @@
 function getEvents() {
   //var name = "Controlling_ESP_by_Google_Calendar"; 
-  let id_of_calendar = "hirhtpqvb576h2mepr4kbniutk@group.calendar.google.com"
+  let id_of_calendar = "you_id"
   //var TheCalendar = CalendarApp.getCalendarsByName(name);
   let TheCalendar = CalendarApp.getCalendarById(id_of_calendar);	 
   
@@ -33,13 +33,19 @@ function doPost(post_request_data) {
                      TheCalendar.length+
                      ',events:[' ;
   
-
-  
-  //let TheCalendar2 = TheCalendar1[0].getTitle();
-
-  
+  for(let i=0;i<TheCalendar.length;i++){
+    Json_respond = Json_respond+'{';
+    Json_respond = Json_respond+'name:'+TheCalendar[i].getTitle()+',';
+    Json_respond = Json_respond+'Category:'+TheCalendar[i].getColor()+',';
+    Json_respond = Json_respond+'Event_start_date_time:'+TheCalendar[i].getStartTime()+',';
+    Json_respond = Json_respond+'Event_end_date_time:'+TheCalendar[i].getEndTime()+',';
+    Json_respond = Json_respond+'},';
+      }
+      
   //return respond(JSON.stringify({result: request_data.parameter.name}));
-  return respond(JSON.stringify(Json_respond));
+  //return respond(JSON.stringify(Json_respond));
+  return respond(Json_respond);
+
 }
 
 
