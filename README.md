@@ -7,10 +7,11 @@ Controlling IoT device based Espressif Systems ESP32 or ESP8266 board by Google 
 
 --------------------  
 
-### Reasons to Use Google Sheets for IoT Sensor Data
-- Automate Embedded IoT devices with your events life. 
-- Controlling Embedded IoT devices by Time.
+### Reasons to Use Google Calendar for Embedded IoT Projects
+- Automating Embedded IoT projects with your life events. 
+- Controlling Embedded IoT project by Time.
 - Easy change the events in smartphone/desktop/web.
+- Manipulate your ideas by default functions or by javascript functions (Apps Script).
  
  #### Note:  
  Apps Script services impose daily quotas and hard limitations on some features. If you exceed a quota or limitation, your script throws an exception and execution terminates.
