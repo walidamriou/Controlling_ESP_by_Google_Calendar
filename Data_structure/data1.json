@@ -2,7 +2,7 @@
 "Reponse_date": "1568908766",
 "Events_array_start_date":"1568908766",
 "Events_array_end_date":"1568908766",
-"Number_Events" : "2"
+"Number_Events" : "2",
 
 "events":[
     {
@@ -30,5 +30,4 @@
         "Event_end_date_time":"84989"
     }
       ]
-
 }
