@@ -1,6 +1,6 @@
 function getEvents() {
   //var name = "Controlling_ESP_by_Google_Calendar"; 
-  let id_of_calendar = "you_id"
+  let id_of_calendar = "your_id"
   //var TheCalendar = CalendarApp.getCalendarsByName(name);
   let TheCalendar = CalendarApp.getCalendarById(id_of_calendar);	 
   
