@@ -1,19 +1,34 @@
 {
-“date”: 1568908766,
-“start_date”:1568908766,
-“end_date”:1568908766,
-"number" : 2
+"Reponse_date": "1568908766",
+"Events_array_start_date":"1568908766",
+"Events_array_end_date":"1568908766",
+"Number_Events" : "2"
 
-“events” :
-[
-  {
-    “name”:”event1”,
-    “description”:”info"
+"events":[
+    {
+        "name":"event1",
+        "Category":"red",
+        "Event_start_date_time":"564646",
+        "Event_end_date_time":"84989"
     },
     {
-      “name”:”event1”,
-      “description”:”info"
-      }
+        "name":"event1",
+        "Category":"red",
+        "Event_start_date_time":"564646",
+        "Event_end_date_time":"84989"
+    },
+    {
+        "name":"event1",
+        "Category":"red",
+        "Event_start_date_time":"564646",
+        "Event_end_date_time":"84989"
+    },
+    {
+        "name":"event1",
+        "Category":"red",
+        "Event_start_date_time":"564646",
+        "Event_end_date_time":"84989"
+    }
       ]
 
 }
